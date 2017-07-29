@@ -1,19 +1,24 @@
-package tr.org.kamp.linux.userinterface;
+package tr.org.kamp.linux.userinterface.model;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
 
-public class Box {
+public abstract class AbstractShape {
 	private int x;
 	private int y;
 	private int width;
 	private int height;
 	private Color color;
-
-	public Box(Color color) {
-		width = 100;
-		height = 100;
+	
+	public AbstractShape(int x, int y, int width, int height, Color color) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
 		this.color = color;
 	}
+	
+	public abstract void draw(Graphics2D g2d);
 
 	public int getX() {
 		return x;
@@ -54,5 +59,5 @@ public class Box {
 	public void setColor(Color color) {
 		this.color = color;
 	}
-
+	
 }
