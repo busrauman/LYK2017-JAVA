@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import tr.org.kamp.linux.agarioclone.model.Chip;
+import tr.org.kamp.linux.agarioclone.model.Difficulty;
 import tr.org.kamp.linux.agarioclone.model.Enemy;
 import tr.org.kamp.linux.agarioclone.model.GameObject;
 import tr.org.kamp.linux.agarioclone.model.Mine;
@@ -36,8 +37,8 @@ public class GameLogic {
 
 	private Random random;
 
-	public GameLogic() {
-		player = new Player(10, 10, 20, 3, Color.BLUE);
+	public GameLogic(String playerName, Color selectedColor, Difficulty difficulty) {
+		player = new Player(10, 10, 20, 3, selectedColor, playerName);
 
 		gameObjects = new ArrayList<GameObject>();
 		chipsToRemove = new ArrayList<GameObject>();
@@ -48,13 +49,29 @@ public class GameLogic {
 
 		gameFrame = new GameFrame();
 		gamePanel = new GamePanel(gameObjects);
-		gamePanel.setSize(640, 480);
+		gamePanel.setSize(800, 600);
 
 		random = new Random();
 
-		fillChips(25);
-		fillMines(10);
-		fillEnemies(9);
+		switch (difficulty) {
+		case EASY:
+			fillChips(15);
+			fillMines(7);
+			fillEnemies(5);			
+			break;
+		case NORMAL:
+			fillChips(25);
+			fillMines(10);
+			fillEnemies(9);	
+			break;
+		case HARD:
+			fillChips(40);
+			fillMines(20);
+			fillEnemies(15);
+			break;
+		default:
+			break;
+		}
 
 		addMouseEvents();
 	}

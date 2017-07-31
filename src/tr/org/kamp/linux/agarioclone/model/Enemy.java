@@ -11,6 +11,17 @@ public class Enemy extends GameObject {
 		this.speed = speed;
 	}
 	
+	@Override
+	public void setRadius(int radius) {
+		// TODO Auto-generated method stub
+		super.setRadius(radius);
+		if(getRadius() < 5) {
+			setRadius(5);
+		} else if( getRadius() > 250 ) {
+			setRadius(250);
+		}
+	}
+	
 	public int getSpeed() {
 		return speed;
 	}
