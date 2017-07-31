@@ -6,8 +6,9 @@ public class Enemy extends GameObject {
 	
 	private int speed;
 	
-	public Enemy(int x, int y, int radius, Color color) {
+	public Enemy(int x, int y, int radius, int speed, Color color) {
 		super(x, y, radius, color);
+		this.speed = speed;
 	}
 	
 	public int getSpeed() {
