@@ -49,13 +49,13 @@ public class Player extends GameObject {
 	@Override
 	public void draw(Graphics2D g2d) {
 		// TODO Auto-generated method stub
-		super.draw(g2d);
+		//super.draw(g2d);
 		FontMetrics fontMetrics = g2d.getFontMetrics(g2d.getFont());
 		int width = fontMetrics.stringWidth(playerName);
 		int nameX = getX() + (getRadius() - width) / 2;
 		int nameY = getY() - fontMetrics.getHeight();
 		g2d.drawString(playerName, nameX, nameY);
-//		g2d.drawImage(image, getX(), getY(), getRadius(), getRadius(), null);
+		g2d.drawImage(image, getX(), getY(), getRadius(), getRadius(), null);
 	}
 
 }
