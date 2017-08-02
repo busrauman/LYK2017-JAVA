@@ -38,7 +38,7 @@ public class GameLogic {
 	private Random random;
 
 	public GameLogic(String playerName, Color selectedColor, Difficulty difficulty) {
-		player = new Player(10, 10, 20, 2, selectedColor, playerName);
+		player = new Player(10, 10, 20, 1 , selectedColor, playerName);
 
 		gameObjects = new ArrayList<GameObject>();
 		chipsToRemove = new ArrayList<GameObject>();
@@ -298,7 +298,7 @@ public class GameLogic {
 					addNewObjects();
 					gamePanel.repaint();
 					try {
-						Thread.sleep(10);
+						Thread.sleep(50);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
