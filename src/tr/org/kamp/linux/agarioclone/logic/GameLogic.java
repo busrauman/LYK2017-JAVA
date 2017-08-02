@@ -38,7 +38,7 @@ public class GameLogic {
 	private Random random;
 
 	public GameLogic(String playerName, Color selectedColor, Difficulty difficulty) {
-		player = new Player(10, 10, 20, 3, selectedColor, playerName);
+		player = new Player(10, 10, 20, 1 , selectedColor, playerName);
 
 		gameObjects = new ArrayList<GameObject>();
 		chipsToRemove = new ArrayList<GameObject>();
