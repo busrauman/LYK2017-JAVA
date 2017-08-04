@@ -1,4 +1,4 @@
-package tr.org.kamp.linux;
+package tr.org.kamp.linux.collections;
 
 import java.util.ArrayList;
 import java.util.Iterator;
